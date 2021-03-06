@@ -1,0 +1,20 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for SitePoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michiel Mulders",
+  "license": "ISC",
+  "dependencies": {
+    "Buffer": "0.0.0",
+    "buffer": "^6.0.3",
+    "chai": "^4.3.3",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "file-system": "^2.2.2",
+    "newsapi": "^2.4.1"
+  }
+}
