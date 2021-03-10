@@ -12,7 +12,7 @@
     "Buffer": "0.0.0",
     "buffer": "^6.0.3",
     "chai": "^4.3.3",
-    "discord.js": "^11.5.1",
+    "discord.js": "^11.6.4",
     "dotenv": "^8.2.0",
     "file-system": "^2.2.2",
     "newsapi": "^2.4.1"
