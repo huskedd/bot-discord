@@ -15,10 +15,6 @@ Object.keys(botCommands).map(key => {
   bot.commands.set(botCommands[key].name, botCommands[key]);
 });
 
-
-
-bot.login("ODE1OTMwNTIwODAxMjQ3Mjcy.YDzkgw.3zfVrfSAvEMB5v25Gs_G2N3Fw54");
-
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
 });
