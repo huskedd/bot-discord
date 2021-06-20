@@ -1,5 +1,5 @@
 //see index.js for new changes 
-//my sql datbase is offline
+//the sql database for password is offline
 
 
 const mysql = require('mysql2');
