@@ -3,7 +3,7 @@ const pronote = require('@bugsounet/pronote-api');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = require('./token.json');
-//the password/url/username/and other thing
+//the password/url/username/and other things
 const id = require('./id.json');
 bot.commands = new Discord.Collection();
 
