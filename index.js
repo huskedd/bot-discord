@@ -3,8 +3,9 @@ const pronote = require('@bugsounet/pronote-api');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = require('./token.json');
-//the password/url/username/and other things
+//the password/url/username/and other thing
 const id = require('./id.json');
+const getMarks = require('@bugsounet/pronote-api/src/fetch/pronote/marks');
 bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -23,7 +24,9 @@ for (const file of commandFiles) {
     console.info(`Logged in as ${bot.user.tag}!`);
   });
 
-  bot.on('message', message => {
+//bot for creating an handler later
+
+/*   bot.on('message', message => {
 	if (!message.content.startsWith('!') || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -37,7 +40,7 @@ for (const file of commandFiles) {
 		console.error(error);
 		message.reply('there was an error trying to execute that command!');
 	}
-});
+}); */
 
         //see token.json for token
   bot.login(token.token);
@@ -56,17 +59,46 @@ async function main()
     
     console.log(session.user.studentClass.name); // Affiche la classe du trimestre 
 
-
     console.log(`L'élève a ${pronote.fetchAbsences.length} absence`);
     
-    console.log(`nombres de devoirs a faire : ${pronote.fetchHomeworks.length}`);
+/*     console.log(`nombres de devoirs a faire : ${pronote.fetchHomeworks}`); */
+
+    
     
     
     // etc. les fonctions utilisables sont 'timetable', 'marks', 'contents', 'evaluations', 'absences', 
     // 'homeworks', 'infos', et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
 }
 
+async function absences(){
+    const session = await pronote.login(url, username, password) //login sur pronote
+    console.log(session.user.studentClass.name); // Affiche la classe du trimestre
 
+}
+
+function grades() {
+
+}
+
+async function homeworks() {
+    console.log(pronote.fetchHomeworks.arguments);
+}
+
+
+bot.on('message', msg => {
+  if (msg.content === 'absences') {
+    msg.reply(`L'élève a ${pronote.fetchAbsences.length} absence`); //affiche les absences
+    
+  }
+});
+
+bot.on('message', msg => {
+  if (msg.content === '!classeName') {
+    const session = pronote.login(url, username, password);
+    msg.reply((session.user.studentClass.name));
+    msg.channel.send('pong');
+  }
+});
 
 main().catch(err => {
     if (err.code === pronote.errors.WRONG_CREDENTIALS.code) {
@@ -76,3 +108,4 @@ main().catch(err => {
 
     }
 });
+
