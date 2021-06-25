@@ -54,34 +54,38 @@ const password = id.password;
 async function main()
 {
     const session = await pronote.login(url, username, password/*, cas*/);
-    
-    let displaySession = console.log(session.user.name); // Affiche le nom de l'élève
-    
-    console.log(session.user.studentClass.name); // Affiche la classe du trimestre 
-
-    console.log(`L'élève a ${pronote.fetchAbsences.length} absence`);
+    const displaySession = console.log('connecté sur Compte Dev :' + session.user.name);
     
 /*     console.log(`nombres de devoirs a faire : ${pronote.fetchHomeworks}`); */
-
-    
-    
-    
     // etc. les fonctions utilisables sont 'timetable', 'marks', 'contents', 'evaluations', 'absences', 
     // 'homeworks', 'infos', et 'menu', sans oublier les champs 'user' et 'params' qui regorgent d'informations.
 }
 
 async function absences(){
     const session = await pronote.login(url, username, password) //login sur pronote
-    console.log(session.user.studentClass.name); // Affiche la classe du trimestre
+    (`L'élève a ${pronote.fetchAbsences.length} absence`);
+    
 
 }
 
-function grades() {
+async function classe() {
+  const session = await pronote.login(url,username, password)
+  console.log(session.user.studentClass.name); // Affiche la classe du trimestre 
+}
 
+async function grades() {
+  const session = await pronote.login(url, username, password);
+  /* {pronote.getMarks.length}; */
+  pronote.fetchMarks.length;
 }
 
 async function homeworks() {
-    console.log(pronote.fetchHomeworks.arguments);
+    pronote.fetchHomeworks.length;
+}
+
+async function displayName() {
+  const session = await pronote.login(url, username, password);
+  session.user.name;
 }
 
 
@@ -96,7 +100,12 @@ bot.on('message', msg => {
   if (msg.content === '!classeName') {
     const session = pronote.login(url, username, password);
     msg.reply((session.user.studentClass.name));
-    msg.channel.send('pong');
+  }
+});
+
+bot.on('message', msg => {
+  if (msg.content === 'pronote.grade') {
+      grades(pronote.fetchMarks);
   }
 });
 
@@ -109,3 +118,11 @@ main().catch(err => {
     }
 });
 
+grades().catch(err => {
+  if(err)
+  console.log(err, args);
+  else {
+    console.log(err)
+  
+  }
+});
