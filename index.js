@@ -1,3 +1,6 @@
+/******************THIS IS THE MAIN FILE FOR THE BOT ********************
+***********************************************************************/
+
 const fs = require('fs');
 const pronote = require('@bugsounet/pronote-api');
 const Discord = require('discord.js');
