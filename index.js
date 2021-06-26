@@ -27,7 +27,7 @@ for (const file of commandFiles) {
     console.info(`Logged in as ${bot.user.tag}!`);
   });
 
-//bot for creating an handler later
+//code for creating an handler later
 
 /*   bot.on('message', message => {
 	if (!message.content.startsWith('!') || message.author.bot) return;
