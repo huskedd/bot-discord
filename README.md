@@ -4,7 +4,7 @@
 
 - [Node.js](http://nodejs.org/)
 - [Discord](https://discordapp.com/) account
-
+- and a [pronote] account wich is supplied by your school/organisation
 ## Installation Steps (if applicable)
 
 1. Clone repo
