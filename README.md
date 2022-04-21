@@ -1,4 +1,4 @@
-## bot not finished
+## bot no longer maintained
 
 ## Requirements
 
