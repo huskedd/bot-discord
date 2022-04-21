@@ -7,7 +7,7 @@ const http = require('http');
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('52574e130fa4489b91b823d78baff6a3');
+const newsapi = new NewsAPI('52574e130fa4489b91b823d78baff6a3'); //trying to implement a new functionality 
 const pronote = require('@bugsounet/pronote-api');
 
 
@@ -25,7 +25,7 @@ const { setServers } = require('dns');
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Samefa931693020533!' 
+    password: 'password' 
 
 })
 
