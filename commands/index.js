@@ -1,3 +1,5 @@
+// main structure
+
 const { description } = require('./ping')
 
 module.exports = {
